@@ -12,7 +12,7 @@ pool:
 
 variables:
  rgname: "varrg"
- loc: eastus"
+ loc: "eastus"
 
 steps:
 - task: AzurePowerShell@5
