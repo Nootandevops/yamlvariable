@@ -1,0 +1,23 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool:
+  name: Default
+  demands: vm
+
+variables:
+ rgname: "varrg"
+ loc: eastus"
+
+steps:
+- task: AzurePowerShell@5
+  inputs:
+    azureSubscription: 'azure-connection'
+    ScriptType: 'FilePath'
+    ScriptPath: 'yaml.ps1'
+    azurePowerShellVersion: 'LatestVersion'
